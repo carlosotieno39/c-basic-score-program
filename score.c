@@ -1,23 +1,33 @@
 #include <stdio.h>
-int main() {
-    int a,b,c,d;
-    a = 5;
-    b = 3;     
-    c = 8;
-    d = 10;
+int main () {
 
-    int score=30;
+    int score;
+    int grade;
 
-    if(score<40)
-    {
-        printf("fail\n");
+    printf("enter your score:");
+
+         
+    if(scanf("%d", &score) != 1 ||score < 0 || score >100) {
+        printf("Invalid must be 0-100.\n");
+        return 1;
+    
+    }   
+
+    if(score>70){
+        grade='A';
+    } 
+    else if(score>60){
+        grade='B';
     }
-    else if(score<60)
-    {
-        printf("pass\n");
+    else if(score>50){
+        grade='C';
+    } 
+    else if(score>40){
+        grade='D';
     }
     else {
-        printf("credit\n");
+        grade='E';
     }
-    
+    printf("your grade is %c\n", grade);
+    return 0;
 }
